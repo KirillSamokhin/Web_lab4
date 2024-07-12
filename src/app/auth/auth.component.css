@@ -1,0 +1,28 @@
+.auth_block{
+    text-align: center;
+    width: 30%;
+    margin-top: 10%;
+    margin-left: 35%;
+}
+.auth_form{
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.container {
+    max-width: 1400px;
+    padding: 1px;
+    margin: 0;
+    display: flex;
+}
+.user_card{
+    width: 70%;
+    padding: 1px;
+    border-style: ridge;
+    border-color: grey;
+    border-radius: 10px;
+    margin-left: 15%;
+    background-color: lightgray;
+}

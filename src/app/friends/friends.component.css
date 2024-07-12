@@ -1,0 +1,10 @@
+.friends_block{
+  text-align: center;
+  width: 50%;
+  margin-top: 5%;
+  margin-left: 25%;
+}
+.friend_card{
+  display: flex;
+  flex-direction: row;
+}

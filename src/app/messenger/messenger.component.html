@@ -1,0 +1,27 @@
+<a mat-raised-button style="background: red; margin: 10px" routerLink="/friends">Назад</a>
+<div class="message_block">
+  <h1>Мессенджер</h1>
+  <div>
+    <mat-card>
+      <mat-card-content *ngFor="let message of messages" style="text-align: left">
+        <p [style.color]="message.includes(name) ? 'green' : 'black'">{{message}}</p>
+        <p></p>
+      </mat-card-content>
+    </mat-card>
+
+    <form class="message_form" (ngSubmit)="sendMessage()">
+      <mat-form-field>
+        <textarea matInput [(ngModel)]="inputMessage"
+                  name="message"
+                  placeholder="Введите сообщение"
+                  [required]="true"
+                  [cdkTextareaAutosize]="true"
+                  #autosize="cdkTextareaAutosize"
+                  [cdkAutosizeMinRows]="1"
+                  [cdkAutosizeMaxRows]="5"
+        ></textarea>
+      </mat-form-field>
+      <button color="primary" mat-raised-button type="submit">Отправить</button>
+    </form>
+  </div>
+</div>

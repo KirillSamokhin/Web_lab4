@@ -1,0 +1,13 @@
+.public_block{
+  text-align: center;
+  width: 30%;
+  margin-top: 10%;
+  margin-left: 35%;
+}
+.public_form{
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

@@ -1,0 +1,27 @@
+<a mat-raised-button style="background: red; margin: 10px" routerLink="/user">Назад</a>
+<div class="friends_block">
+  <h1>Друзья</h1>
+  <mat-card>
+    <mat-card *ngIf="friends?.length === 0"> Нет друзей...</mat-card>
+
+    <mat-card *ngFor="let friend of friends;" class="friend_card">
+      <mat-card-title style="margin-left: 10px; width: 60%; text-align: left">{{friend.name}}</mat-card-title>
+      <mat-card-actions style="width: 40%">
+        <a mat-raised-button routerLink="/messenger">Написать сообщение</a>
+        <button (click)="onFriendDeleteButton(friend.id)" mat-raised-button color="warn">Удалить</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-card>
+
+  <p></p>
+
+  <h1>Возможно, вы знакомы</h1>
+  <mat-card *ngIf="allUsers?.length === 0">Рекомендаций нет...</mat-card>
+
+  <mat-card *ngFor="let user of allUsers" class="friend_card">
+    <mat-card-title style="margin-left: 10px; width: 80%; text-align: left">{{user.name}}</mat-card-title>
+    <mat-card-actions style="width: 20%">
+      <button (click)="onFriendAddButton(user.id)" mat-raised-button color="primary">Добавить</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

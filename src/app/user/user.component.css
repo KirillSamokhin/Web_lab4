@@ -1,0 +1,17 @@
+.user_block{
+    text-align: center;
+    display: flex;
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 25%;
+}
+.image_change{
+    gap: 5px;
+    width: 30%;
+}
+.user_card{
+    text-align: left;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}

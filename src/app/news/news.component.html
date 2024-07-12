@@ -1,0 +1,9 @@
+<a mat-raised-button style="background: red; margin: 10px" routerLink="/user">Назад</a>
+<div class="news_block">
+    <h1>Лента новостей</h1>
+    <mat-card class="news_card" *ngFor="let user of news;">
+        <mat-card-title style="margin-left: 5%">{{user.name}}</mat-card-title>
+
+        <mat-card-content *ngFor="let userNews of user.news;">{{userNews}}</mat-card-content>
+    </mat-card>
+</div>

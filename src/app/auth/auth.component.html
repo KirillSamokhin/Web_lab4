@@ -1,0 +1,24 @@
+<div class="auth_block">
+<h1>Вход</h1>
+<div>
+  <form [formGroup]="loginIn" (ngSubmit)="onSubmit()" class="auth_form">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+
+      <input [required]="true" type="email" matInput placeholder="ex@ex.com" formControlName="email">
+
+      <mat-error *ngIf="loginIn.hasError('email') && !loginIn.hasError('required')">
+        Введите валидный email
+      </mat-error>
+
+      <mat-error *ngIf="!emailInput">
+        <strong>Поле обязательно для заполнения</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Войти</button>
+
+    <a routerLink="/register">Зарегистрироваться</a>
+  </form>
+</div>
+</div>

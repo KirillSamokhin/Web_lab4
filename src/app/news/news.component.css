@@ -1,0 +1,14 @@
+.news_block{
+    text-align: center;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+.news_card{
+    justify-content: center;
+    justify-items: center;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}

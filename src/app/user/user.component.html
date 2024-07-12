@@ -1,0 +1,26 @@
+<div class="user_block">
+  <mat-card class="image_change">
+    <img mat-card-image [src]="user.photo" alt="Фото пользователя" style="max-width: 300px; width:100%">
+
+    <mat-card-actions style="display: flex; flex-direction: column; gap: 15px">
+      <button (click)="deleteAvatar()" mat-raised-button color="warn">Удалить</button>
+      <input #imageInput
+             type="file"
+             accept="image/*"
+             (change)="editAvatar(imageInput)">
+    </mat-card-actions>
+  </mat-card>
+  <div class="user_card">
+    <h1>{{user.name}}</h1>
+    <h3>Дата рождения: {{user.date}}</h3>
+    <h3>Email: {{user.email}}</h3>
+    <div>
+      <a mat-raised-button routerLink="/friends">Друзья</a>
+      <a mat-raised-button style="margin-left: 10px" routerLink="/news">Новости</a>
+      <a target="_blank" mat-raised-button href="http://localhost:3000/" *ngIf="user.role === 'admin'" style="margin-left: 10px">Админ</a>
+      <a mat-raised-button style="background: red; margin-left: 10px" routerLink="/login">Выход</a>
+    </div>
+    <p></p>
+    <a mat-raised-button routerLink="/publication">Опубликовать новость</a>
+  </div>
+</div>

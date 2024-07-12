@@ -1,0 +1,38 @@
+<div class="reg_block">
+    <h1>Регистрация</h1>
+    <div>
+        <form *ngIf="!isRegisteredOver" [formGroup]="signIn" (ngSubmit)="onSubmit()" class="reg_form">
+            <mat-form-field>
+                <mat-label>Введите имя</mat-label>
+                <input [required]="true" matInput placeholder="Имя" formControlName="name">
+                <mat-icon matSuffix>group</mat-icon>
+                <mat-error *ngIf="!nameInput">
+                    <strong>Поле обязательно для заполнения</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Введите дату рождения</mat-label>
+                <input [required]="true" matInput [matDatepicker]="picker" formControlName="date">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker [disabled]="false" #picker></mat-datepicker>
+                <mat-error *ngIf="!birthdateInput">
+                    <strong>Поле обязательно для заполнения</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input [required]="true" type="email" matInput placeholder="ex@ex.com" formControlName="email">
+                <mat-error *ngIf="signIn.hasError('email') && !signIn.hasError('required')">
+                    Введите валидный email
+                </mat-error>
+                <mat-error *ngIf="!emailInput">
+                    <strong>Поле обязательно для заполнения</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary" style="max-width: 50%; margin-left: 25%">Отправить</button>
+        </form>
+    </div>
+</div>

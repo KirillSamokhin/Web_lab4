@@ -1,0 +1,25 @@
+<a mat-raised-button style="background: red; margin: 10px" routerLink="/user">Назад</a>
+<div class="public_block">
+  <h1>Опубликовать новость</h1>
+  <div>
+    <form class="public_form"  [formGroup]="addNews" (ngSubmit)="onSubmit()">
+
+      <mat-form-field>
+      <textarea matInput
+                placeholder="Что у Вас нового?"
+                formControlName="text"
+                [required]="true"
+                [cdkTextareaAutosize]="true"
+                #autosize="cdkTextareaAutosize"
+                [cdkAutosizeMinRows]="1"
+                [cdkAutosizeMaxRows]="5"></textarea>
+
+        <mat-error *ngIf="!textInput">
+          <strong>Запись не может быть пустой</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button color="primary">Отправить</button>
+    </form>
+  </div>
+</div>
